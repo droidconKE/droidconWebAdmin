@@ -11,7 +11,7 @@
 	           <div class="col-md-10">
 	              <!-- Logo -->
 	              <div class="logo">
-	                 <h1><router-link to="/"> <img width='100' src="assets/images/logo.png" alt="logo"> </router-link></h1>
+	                 <h1><router-link to="/"> <img width='100' src="/assets/images/logo.png" alt="logo"> </router-link></h1>
 	              </div>
 	           </div>
 
@@ -37,12 +37,13 @@
 		  	<div class="sidebar content-box" style="display: block;">
                 <ul class="nav">
                     <!-- Main menu -->
-                    <li class="current"><router-link to="/"><i class="glyphicon glyphicon-home"></i> Dashboard</router-link></li>
-                    <li><router-link to="/sessions-1"><i class="glyphicon glyphicon-list"></i> Day 1 sessions</router-link></li>
-                    <li><router-link to="/sessions-2"><i class="glyphicon glyphicon-list"></i> Day 2 Sessions</router-link></li>
-                    <li><router-link to="/speakers"><i class="glyphicon glyphicon-user"></i> Speakers</router-link></li>
-                    <li><router-link to="/agenda"><i class="glyphicon glyphicon-record"></i> Agenda</router-link></li>
-                    <li><router-link to="/notifications"><i class="glyphicon glyphicon-bell"></i> Push Notifications</router-link></li>
+                    <li :class="[ path === '/' ? 'current' : '']"><router-link to="/"><i class="glyphicon glyphicon-home"></i> Dashboard</router-link></li>
+                    <li :class="[ path === '/day-one' ? 'current' : '']"><router-link to="/day-one"><i class="glyphicon glyphicon-list"></i> Day 1 sessions</router-link></li>
+                    <li :class="[ path === '/day-two' ? 'current' : '']"><router-link to="/day-two"><i class="glyphicon glyphicon-list"></i> Day 2 Sessions</router-link></li>
+                    <li :class="[ path === '/speakers' ? 'current' : '']"><router-link to="/speakers"><i class="glyphicon glyphicon-user"></i> Speakers</router-link></li>
+                    <li :class="[ path === '/agenda' ? 'current' : '']"><router-link to="/agenda"><i class="glyphicon glyphicon-record"></i> Agenda</router-link></li>
+                    <li :class="[ path === '/feedback' ? 'current' : '']"><router-link to="/feedback"><i class="glyphicon glyphicon-volume-up"></i> Event Feedback</router-link></li>
+                    <li :class="[ path === '/notifications' ? 'current' : '']"><router-link to="/notifications"><i class="glyphicon glyphicon-bell"></i> Push Notifications</router-link></li>
                     
                 </ul>
              </div>

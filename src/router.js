@@ -26,13 +26,53 @@ const router = new Router({
       component: Home
     },
     {
-      path: '/about',
-      name: 'about',
+      path: '/day-one',
+      name: 'day-one',
       meta: {
         protected: true
         },
-      component: () => import( './views/About.vue')
+      component: () => import( './views/DayOne.vue')
     },
+    {
+        path: '/day-two',
+        name: 'day-two',
+        meta: {
+          protected: true
+          },
+        component: () => import( './views/DayTwo.vue')
+      },
+      {
+        path: '/schedule/:id/:day',
+        name: 'schedule',
+        meta: {
+          protected: true
+          },
+        component: () => import( './views/SingleSchedule.vue')
+      },
+      {
+        path: '/speakers',
+        name: 'speakers',
+        meta: {
+          protected: true
+          },
+        component: () => import( './views/Speakers.vue')
+      },
+      {
+        path: '/agenda',
+        name: 'agenda',
+        meta: {
+          protected: true
+          },
+        component: () => import( './views/Agenda.vue')
+      },
+      {
+        path: '/feedback',
+        name: 'feedback',
+        meta: {
+          protected: true
+          },
+        component: () => import( './views/EventFeedback.vue')
+      },
     {
         path: '/login',
         name: 'login',
