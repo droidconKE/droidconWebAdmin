@@ -8,14 +8,14 @@
         <div class="header">
 	     <div class="container">
 	        <div class="row">
-	           <div class="col-md-10">
+	           <div class="col-md-10 col-sm-9">
 	              <!-- Logo -->
 	              <div class="logo">
 	                 <h1><router-link to="/"> <img width='100' src="/assets/images/logo.png" alt="logo"> </router-link></h1>
 	              </div>
 	           </div>
 
-	           <div class="col-md-2">
+	           <div class="col-md-2 col-sm-3">
 	              <div class="navbar navbar-inverse" role="banner">
 	                  <ul class="nav navbar-nav">
 	                      <li class="dropdown">

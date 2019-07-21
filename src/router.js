@@ -73,6 +73,14 @@ const router = new Router({
           },
         component: () => import( './views/EventFeedback.vue')
       },
+      {
+        path: '/notifications',
+        name: 'notifications',
+        meta: {
+          protected: true
+          },
+        component: () => import( './views/Notifications.vue')
+      },
     {
         path: '/login',
         name: 'login',

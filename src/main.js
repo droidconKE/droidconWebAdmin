@@ -6,6 +6,9 @@ import VueIziToast from 'vue-izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import VeeValidate from 'vee-validate';
+
+Vue.use(VeeValidate);
  
 Vue.use(VueAxios, axios)
 
