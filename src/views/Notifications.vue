@@ -103,6 +103,10 @@ export default {
             this.axios.post('https://fcm.googleapis.com/fcm/send',jsonBody,{headers})
             .then(response => {
                 this.$toast.success('Notifications sent', 'Notifications',{position: 'topCenter'});
+                this.$data.form.url = ''
+                this.$data.form.message = ''
+                this.$data.form.topic = ''
+                this.$data.form.title = ''
                 return
                 // console.log('Sent.:' ,response);
             }).catch((err) => {
