@@ -20,7 +20,7 @@ export default new Vuex.Store({
   mutations: {
     getSpeakers: state => {
         let items = []
-      db.collection('speakers').orderBy('id').onSnapshot((snapshot) => {
+      db.collection('speakers2019').orderBy('id').onSnapshot((snapshot) => {
         items = []
         snapshot.forEach((doc) => {
           items.push({ id: doc.id, details: doc.data() })
@@ -42,7 +42,7 @@ export default new Vuex.Store({
     },
     getFirstDay: state => {
         let items = []
-      db.collection('day_one').orderBy('id').onSnapshot((snapshot) => {
+      db.collection('day_one_2019').orderBy('id').onSnapshot((snapshot) => {
         items = []
         snapshot.forEach((doc) => {
           items.push({ id: doc.id, details: doc.data() })
@@ -52,7 +52,7 @@ export default new Vuex.Store({
     },
     getDayTwo: state => {
         let items = []
-      db.collection('day_two').orderBy('id').onSnapshot((snapshot) => {
+      db.collection('day_two_2019').orderBy('id').onSnapshot((snapshot) => {
         items = []
         snapshot.forEach((doc) => {
           items.push({ id: doc.id, details: doc.data() })
@@ -78,7 +78,7 @@ export default new Vuex.Store({
         firebase.auth().onAuthStateChanged((user) => {
             if(user){
                 let items = []
-                db.collection('sessionsFeedback').where('session_id','==',parseInt(params.id, 10)).where('day_number','==',params.day).onSnapshot((snapshot) => {
+                db.collection('session_feedback_2019').where('session_id','==',parseInt(params.id, 10)).where('day_number','==',params.day).onSnapshot((snapshot) => {
                     items = []
                     snapshot.forEach((doc) => {
                     items.push({ id: doc.id, details: doc.data() })
@@ -90,7 +90,7 @@ export default new Vuex.Store({
     },
     updateEventReviews(state){
         let items = []
-        db.collection('eventFeedback').onSnapshot((snapshot) => {
+        db.collection('event_feedback_2019').onSnapshot((snapshot) => {
             items = []
             snapshot.forEach((doc) => {
             items.push({ id: doc.id, details: doc.data() })
@@ -110,7 +110,8 @@ export default new Vuex.Store({
     },
     updateSession(state, params){
         let items = []
-        db.collection('day_one').where('id','==',parseInt(params.id, 10)).onSnapshot((snapshot) => {
+        // console.log(params)
+        db.collection(params.day ==='day_one'?'day_one_2019':'day_two_2019').where('id','==',parseInt(params.id, 10)).onSnapshot((snapshot) => {
             items = []
             snapshot.forEach((doc) => {
             items.push({ id: doc.id, details: doc.data() })

@@ -19,7 +19,7 @@
 						</thead>
 						<tbody>
 							<tr v-for="day in dayOne" :key="day.id" class="odd gradeX">
-                                <td>{{day.details.id + 1}}</td>
+                                <td>{{day.details.id }}</td>
 								<td :style="{ color: day.details.session_color != '' ? day.details.session_color : '#000'}">{{day.details.title}}</td>
 								<td>{{day.details.type}}</td>
 								<td>

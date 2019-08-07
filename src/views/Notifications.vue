@@ -35,7 +35,7 @@
                         <div class="form-group">
                         <label class="col-sm-2 control-label">Message</label>
                         <div class="col-sm-10">
-                            <textarea v-model="form.message"  v-validate="'max:200'" data-vv-name='message' data-vv-as="message" class="form-control" placeholder="Textarea" rows="3" required></textarea>
+                            <textarea v-model="form.message"  v-validate="'max:400'" data-vv-name='message' data-vv-as="message" class="form-control" placeholder="Textarea" rows="3" required></textarea>
                             <small class='text-danger'>{{ errors.first('message') }}</small>
                         </div>
                         </div>
