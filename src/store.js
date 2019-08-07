@@ -32,7 +32,7 @@ export default new Vuex.Store({
     },
     getAgendas: state => {
         let items = []
-      db.collection('agenda').orderBy('id').onSnapshot((snapshot) => {
+      db.collection('agenda_2019').orderBy('id').onSnapshot((snapshot) => {
         items = []
         snapshot.forEach((doc) => {
           items.push({ id: doc.id, details: doc.data() })
